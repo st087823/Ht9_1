@@ -13,7 +13,7 @@ void resolveError(int errorCode)
 	{
 		cout << Code1[rand() % 2 + 1] << endl;
 	}
-	else if (errorCode == 2)
+	else
 	{
 		cout << Code2[rand() % 2 + 1] << endl;
 	}
@@ -118,7 +118,7 @@ int readInt(long long& number, string& str)
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	//setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
 	
 	string str;
