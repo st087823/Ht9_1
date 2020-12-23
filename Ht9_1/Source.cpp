@@ -34,10 +34,15 @@ bool isDigit(char symbol)
 	return symbol >= '0' && symbol <= '9';
 }
 
-int readDouble(double& number, string& str)
+int readDouble(double& number)
 {
 	double number = 0;
 	int signum = 1;
+
+	string str;
+	getline(cin, str);
+	trim(str);
+
 	if (str[0] == '-')
 	{
 		str = str.substr(1);
@@ -77,11 +82,16 @@ int readDouble(double& number, string& str)
 	return 0;
 }
 
-int readInt(long long& number, string& str)
+int readInt(long long& number)
 {
 	number = 0;
 	int signum = 1;
 	int j = 0;
+
+	string str;
+	getline(cin, str);
+	trim(str);
+
 	if (str[0] == '-')
 	{
 		str = str.substr(1);
@@ -129,9 +139,6 @@ int main()
 
 	while (er1 != 0 && er2 != 0)
 	{
-		string str;
-		getline(cin, str);
-		trim(str);
 
 		if (str.size() > 20)
 		{
@@ -140,8 +147,8 @@ int main()
 			return 2;
 		}
 
-		er1 = readInt(numb1, str);
-		er2 = readDouble(numb2, str);
+		er1 = readInt(numb1);
+		er2 = readDouble(numb2);
 
 		resolveError(er1);
 		resolveError(er2);
